@@ -38,7 +38,7 @@ on:
     branches: [ dev ]
 jobs:
   setup:
-    if: contains('["libsgh"]', github.actor)
+    if: contains('["rwshui"]', github.actor)
     name: build setup
     runs-on: ubuntu-latest
     outputs:
@@ -70,7 +70,7 @@ jobs:
           b=$(echo ${branch} | jq -c)
           echo "branch=${b}" >> $GITHUB_OUTPUT
   build:
-    if: contains('["libsgh"]', github.actor)
+    if: contains('["rwshui"]', github.actor)
     needs: setup
     strategy:
       matrix:
@@ -99,7 +99,7 @@ jobs:
           ref: ${{ matrix.branch }}
           fetch-depth: 0
       - name: Build
-        uses: px-org/build-action@main
+        uses: /rwshui/build-action@main
         with:
           type: "nightly_build"
           target: ${{ matrix.target }}
