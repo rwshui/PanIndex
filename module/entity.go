@@ -35,6 +35,9 @@ type FileNode struct {
 	Hide        int                    `json:"hide"`                            //是否隐藏
 	HasPwd      int                    `json:"has_pwd"`                         //是否是密码文件（包含）
 	ExtraData   map[string]interface{} `json:"extra_data" gorm:"-"`             //额外数据
+	PresentUrl  string `json:"present_url" gorm:"-"`            //地址1
+	PresentLUrl string `json:"present_l_url" gorm:"-"`          //地址2
+	PresentHUrl string `json:"present_h_url" gorm:"-"`          //地址3
 }
 type ShareInfo struct {
 	FilePath  string     `json:"file_path"`         //PanIndex文件路径
