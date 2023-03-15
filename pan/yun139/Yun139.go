@@ -138,6 +138,9 @@ func (y Yun139) ToFileNode(item ContentList) (module.FileNode, error) {
 	fn.FileSize = int64(item.ContentSize)
 	fn.SizeFmt = util.FormatFileSize(fn.FileSize)
 	fn.Thumbnail = item.ThumbnailURL
+	fn.PresentUrl = item.PresentURL
+	fn.PresentLUrl = item.PresentLURL
+	fn.PresentHUrl = item.PresentHURL
 	return fn, nil
 }
 
